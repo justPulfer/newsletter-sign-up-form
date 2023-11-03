@@ -91,7 +91,7 @@ main {
 	background-color: var(--charcoalGrey);
 }
 
-.newsletterCard {
+#newsletterCard {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -137,7 +137,7 @@ main {
 
 #newsletterForm {
 	display: grid;
-	gap: 1rem;
+	gap: 2rem;
 }
 
 #newsletterForm label {
@@ -153,13 +153,25 @@ main {
 	padding: 1rem 1.725rem;
 }
 
-#newsletterForm button {
+.cta {
 	font-weight: 700;
 	color: var(--white);
 	background-color: var(--charcoalGrey);
 	border: none;
 	border-radius: 0.5rem;
 	padding: 1rem 1.725rem;
+
+	transition: background-color 500ms ease-in-out;
+	cursor: pointer;
+}
+
+.cta:hover {
+	background: linear-gradient(
+		90deg,
+		rgba(255, 0, 63, 0.8701681356136204) 0%,
+		rgba(254, 142, 88, 1) 100%
+	);
+	box-shadow: rgba(255, 0, 64, 0.415) 0px 7px 30px;
 }
 
 .inputField {
@@ -167,8 +179,30 @@ main {
 	gap: 0.5rem;
 }
 
-.thankYouCard {
+#thankYouCard {
 	display: none;
+	max-width: 470px;
+	gap: 2rem;
+	background-color: var(--white);
+	display: flex;
+	flex-direction: column;
+
+	border-radius: 2rem;
+	padding: 3.25rem;
+}
+
+.thankYouText {
+	display: grid;
+	gap: 2rem;
+}
+
+#thankYouCard .heading1 {
+	line-height: 1;
+}
+
+#thankYouCard img {
+	width: 50px;
+	height: 50px;
 }
 
 footer {
@@ -176,6 +210,7 @@ footer {
 	background-color: var(--white);
 	position: absolute;
 	bottom: 0;
+	margin-top: 1rem;
 	padding: 0.225rem;
 }
 
@@ -189,14 +224,23 @@ footer {
 	color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1024px) {
 	main {
-		min-height: auto;
+		background-color: var(--white);
 	}
 
-	.newsletterCard {
+	#newsletterCard {
 		flex-direction: column-reverse;
 		padding: 0;
-		border-radius: 0;
+	}
+
+	#thankYouCard {
+		min-height: 100vh;
+		justify-content: space-between;
+		padding: 2rem;
+	}
+
+	#thankYouCard .heading1 {
+		font-size: 2.5rem;
 	}
 }
