@@ -72,14 +72,9 @@ h6 {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-
-	color: var(--charcoalGrey);
 }
 
 main {
@@ -89,6 +84,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--charcoalGrey);
+	color: var(--charcoalGrey);
 }
 
 #newsletterCard {
@@ -98,8 +94,10 @@ main {
 
 	background-color: var(--white);
 	border-radius: 2rem;
-	padding: 1.25rem;
+	padding: 1.5rem 2rem;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+	animation: 1s ease slideIn;
 }
 
 .updateInfo {
@@ -116,7 +114,7 @@ main {
 }
 
 .heading1 {
-	font-size: 3rem;
+	font-size: 3.225rem;
 	font-weight: 700;
 }
 
@@ -140,8 +138,7 @@ main {
 	gap: 2rem;
 }
 
-#newsletterForm label {
-	display: block;
+.smallText {
 	font-size: 0.725rem;
 	font-weight: 700;
 }
@@ -177,18 +174,27 @@ main {
 .inputField {
 	display: grid;
 	gap: 0.5rem;
+
+	position: relative;
+}
+
+#errorMessage {
+	color: var(--tomato);
+	font-weight: 700;
+
+	position: absolute;
+	right: 0;
 }
 
 #thankYouCard {
-	display: none;
-	max-width: 470px;
-	gap: 2rem;
-	background-color: var(--white);
-	display: flex;
 	flex-direction: column;
+	gap: 2rem;
+	max-width: 470px;
+	background-color: var(--white);
 
 	border-radius: 2rem;
 	padding: 3.25rem;
+	animation: 1s ease slideIn;
 }
 
 .thankYouText {
@@ -203,6 +209,10 @@ main {
 #thankYouCard img {
 	width: 50px;
 	height: 50px;
+}
+
+#emailInsertion {
+	font-weight: 700;
 }
 
 footer {
@@ -224,14 +234,39 @@ footer {
 	color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 1024px) {
+/* animation keyframes */
+@keyframes slideIn {
+	from {
+		transform: translateY(20vh);
+		opacity: 0%;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 100%;
+	}
+}
+
+/* Screen media Queries */
+
+@media only screen and (max-width: 860px) {
 	main {
 		background-color: var(--white);
 	}
-
 	#newsletterCard {
+		width: 100%;
+		min-height: 100vh;
+		border: none;
+		box-shadow: none;
 		flex-direction: column-reverse;
 		padding: 0;
+	}
+
+	.pic {
+		width: 100%;
+	}
+
+	.pic img {
+		width: 100%;
 	}
 
 	#thankYouCard {
@@ -244,3 +279,8 @@ footer {
 		font-size: 2.5rem;
 	}
 }
+
+/* Tablet Devices (768px to 1023px wide) */
+/* @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+} */

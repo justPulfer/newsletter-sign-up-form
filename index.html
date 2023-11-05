@@ -51,28 +51,37 @@
 						</div>
 					</div>
 
-					<form action="/" id="newsletterForm">
+					<form action="" id="newsletterForm">
 						<div class="inputField">
-							<label for="email">Email address </label>
-							<input id="email" type="email" placeholder="email@company.com" />
+							<span class="smallText" id="errorMessage"></span>
+							<label class="smallText" for="email">Email address </label>
+							<input
+								id="email"
+								type="email"
+								placeholder="email@company.com"
+								required
+							/>
 						</div>
 						<button id="subscribeBtn" class="cta" type="submit">
 							Subscribe to monthly newsletter
 						</button>
 					</form>
 				</div>
-				<img
-					id="illustration"
-					src="/assets/images/illustration-sign-up-desktop.svg"
-					alt="illustration"
-				/>
+				<picture class="pic">
+					<img
+						id="illustration"
+						src="/assets/images/illustration-sign-up-desktop.svg"
+						alt="illustration"
+					/>
+				</picture>
 			</div>
 			<div id="thankYouCard" style="display: none">
 				<div class="thankYouText">
 					<img src="/assets/images/icon-success.svg" alt="success icon" />
 					<p class="heading1">Thanks for subscribing!</p>
 					<p>
-						A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+						A confirmation email has been sent to
+						<span id="emailInsertion"></span>
 						Please open it and click the button inside to confirm your
 						subscription.
 					</p>
